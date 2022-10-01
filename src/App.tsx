@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './App.css';
+import './App.scss';
 import { Player, Video, DefaultUi, usePlayerContext } from '@vime/react';
 
 // Default theme.
@@ -10,6 +10,7 @@ import '@vime/core/themes/light.css';
 
 // Custom UI component.
 import TapSidesToSeek from './TapSidesToSeek';
+import VimeYoutube from './components/VimeYoutube/VimeYoutube';
 
 function App() {
   // Obtain a ref if you need to call any methods.
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <div id="container">
+      <h1>Vime.js videoplayer example</h1>
       <Player playsinline ref={player} onVmPlaybackReady={onPlaybackReady}>
         <Video poster="https://media.vimejs.com/poster.png">
           <source
@@ -40,6 +42,11 @@ function App() {
           <TapSidesToSeek />
         </DefaultUi>
       </Player>
+      <h1>The contrived example above loads a video from LogRocket’s YouTube channel using the VimeYoutube</h1>
+      <VimeYoutube />
+      <br>
+      
+      </br>
     </div>
   );
 }
